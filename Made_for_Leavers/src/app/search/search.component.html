@@ -1,0 +1,56 @@
+<!--search.component.html - Daniel Syrén (20105070)-->
+<html>
+
+<head>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Search</title>
+</head>
+
+<body>
+
+    <!--Navigation Bar-->
+    <div class="flex">
+        <div class="navOn">
+            <a href="/Search">Search</a>
+        </div>
+        <div class="navOff">
+            <a href="/Ask">Ask</a>
+        </div>
+        <div class="navOff">
+            <a href="/Load">Load</a>
+        </div>
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+    <!--Search Bar-->
+    <div class="flexBar">
+        <input type="text" placeholder="Enter a country/city..." [(ngModel)]="input" (keydown.enter)="search()"/>
+        <button (click)="search()">SEARCH</button>
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+    <!--University Containers-->
+    <div class="container" *ngFor="let university of universities">
+        <div class="university">
+            <a href='{{university.webPage}}' target='_blank'>{{university.name}}</a>
+            <button (click)="save(university)">SAVE</button>            
+        </div>
+        <div style="height:18px;">
+        </div>
+    </div>
+
+    <!--Country Containers-->
+    <div id="countries" *ngIf="displayCountries">
+        <div class="country">{{country1}}</div>
+        <div class="country">{{country2}}</div>
+        <div class="country">{{country3}}</div>
+        <div class="country">{{country4}}</div>
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+</body>
+
+</html>
