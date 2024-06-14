@@ -1,5 +1,20 @@
 /*styles.css - Daniel Syrén (20105070)*/
 
+/*.button Styling*/
+.button {
+    background-color: #FFFFFF;
+}
+
+/*.button:active Styling*/
+.button:active {
+    transform: scale(0.96);
+}
+
+/*.button:hover Styling*/
+.button:hover {
+    background-color: #00FF00;
+}
+
 /*#c Styling*/
 #c {
     /*https://wallpapercave.com/w/wp5680536*/
@@ -28,16 +43,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around; 
-}
-
-/*.country Styling*/
-.country {
-    background-color: #FFFFFF;
-}
-
-/*.country:hover Styling*/
-.country:hover {
-    background-color: #00FF00;
 }
 
 /*.flex Styling*/
