@@ -26,7 +26,7 @@
     <!--Search Bar-->
     <div class="flexBar">
         <input type="text" placeholder="Enter a country/city..." [(ngModel)]="input" (keydown.enter)="search()"/>
-        <button class="button" (click)="search()">SEARCH</button>
+        <button class="click" (click)="search()">SEARCH</button>
     </div>
 
     <br /><br /><br /><br /><br /><br /><br /><br />
@@ -35,7 +35,7 @@
     <div class="container" *ngFor="let university of universities">
         <div class="university">
             <a href='{{university.webPage}}' target='_blank'>{{university.name}}</a>
-            <button class="button" (click)="save(university)">SAVE</button>            
+            <button class="click" (click)="save(university)">SAVE</button>            
         </div>
         <div style="height:18px;">
         </div>
@@ -43,10 +43,10 @@
 
     <!--Country Containers-->
     <div id="countries" *ngIf="displayCountries">
-        <button class="button" (click)="searchCountry(country1)">{{country1}}</button>
-        <button class="button" (click)="searchCountry(country2)">{{country2}}</button>
-        <button class="button" (click)="searchCountry(country3)">{{country3}}</button>
-        <button class="button" (click)="searchCountry(country4)">{{country4}}</button>
+        <button class="click" (click)="searchCountry(country1)">{{country1}}</button>
+        <button class="click" (click)="searchCountry(country2)">{{country2}}</button>
+        <button class="click" (click)="searchCountry(country3)">{{country3}}</button>
+        <button class="click" (click)="searchCountry(country4)">{{country4}}</button>
     </div>
 
     <br /><br /><br /><br /><br /><br /><br /><br />

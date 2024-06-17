@@ -1,20 +1,5 @@
 /*styles.css - Daniel Syrén (20105070)*/
 
-/*.button Styling*/
-.button {
-    background-color: #FFFFFF;
-}
-
-/*.button:active Styling*/
-.button:active {
-    transform: scale(0.96);
-}
-
-/*.button:hover Styling*/
-.button:hover {
-    background-color: #00FF00;
-}
-
 /*#c Styling*/
 #c {
     /*https://wallpapercave.com/w/wp5680536*/
@@ -24,6 +9,21 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 1em;
     font-weight: bold;
+}
+
+/*.click Styling*/
+.click {
+    background-color: #FFFFFF;
+}
+
+/*.click:active Styling*/
+.click:active {
+    transform: scale(0.96);
+}
+
+/*.click:hover Styling*/
+.click:hover {
+    background-color: #00FF00;
 }
 
 /*.container Styling*/

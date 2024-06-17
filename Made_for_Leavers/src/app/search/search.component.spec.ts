@@ -1,5 +1,5 @@
 /*search.component.spec.ts - Daniel Syrén (20105070)*/
-import { ComponentFixture, discardPeriodicTasks, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { SearchComponent } from './search.component';
 import { FormsModule } from '@angular/forms';
 import { HttpService } from '../http_service';
