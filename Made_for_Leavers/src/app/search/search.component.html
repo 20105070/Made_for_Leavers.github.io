@@ -24,9 +24,12 @@
     <br /><br /><br /><br /><br /><br /><br /><br />
 
     <!--Search Bar-->
-    <div class="flexBar">
-        <input type="text" placeholder="Enter a country/city..." [(ngModel)]="input" (keydown.enter)="search()"/>
-        <button class="click" (click)="search()">SEARCH</button>
+    <div class="flex">
+        <div class="flexBar">
+            <div class="fa fa-search"></div>
+            <input type="text" placeholder="Enter a country/city..." [(ngModel)]="input" (keydown.enter)="search()"/>
+            <button class="fa fa-search" (click)="search()"></button>
+        </div>
     </div>
 
     <br /><br /><br /><br /><br /><br /><br /><br />
@@ -35,7 +38,7 @@
     <div class="container" *ngFor="let university of universities">
         <div class="university">
             <a href='{{university.webPage}}' target='_blank'>{{university.name}}</a>
-            <button class="click" (click)="save(university)">SAVE</button>            
+            <button class="fa fa-floppy-disk" (click)="save(university)"></button>            
         </div>
         <div style="height:18px;">
         </div>

@@ -7,13 +7,13 @@
     background-image: url('./assets/images/c.jpg');
     background-size: 100%;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 /*.click Styling*/
 .click {
-    background-color: #FFFFFF;
+    border-radius: 0.5rem;
 }
 
 /*.click:active Styling*/
@@ -56,12 +56,29 @@
 
 /*.flexBar Styling*/
 .flexBar {
+    align-items: center;
+    background: #00FF00;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
     text-align: center;
+    width: 500px;
+}
+
+/*input Styling*/
+input {
+    background: #00FF00;
+    border: none;
+    margin: 0 0.5rem 0 0.5rem;
+    outline: none;
+    width: 100%;
 }
 
 /*.navOff Styling*/
 .navOff {
     background-color: #FFFFFF;
+    border-radius: 0.5rem;
     font-size: 2em;
     font-weight: bold;
 }
@@ -79,7 +96,8 @@
 /*.navOn Styling*/
 .navOn {
     background-color: #00FF00;
-    font-size: 2em;
+    border-radius: 0.5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -95,6 +113,7 @@
 
 .university {
     background-color: #FFFFFF;
+    border-radius: 0.5rem;
 }
 
 .university:hover {
