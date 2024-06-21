@@ -10,15 +10,15 @@
 
     <!--Navigation Bar-->
     <div class="flex">
-        <div class="navOn">
-            <a href="/Search">Search</a>
-        </div>
-        <div class="navOff">
-            <a href="/Ask">Ask</a>
-        </div>
-        <div class="navOff">
-            <a href="/Load">Load</a>
-        </div>
+        <a href="/Search">
+            <div class="navOn">Search</div>
+        </a>
+        <a href="/Ask">
+            <div class="navOff">Ask</div>
+        </a>
+        <a href="/Load">
+            <div class="navOff">Load</div>
+        </a>
     </div>
 
     <br /><br /><br /><br /><br /><br /><br /><br />
@@ -36,20 +36,22 @@
 
     <!--University Containers-->
     <div class="container" *ngFor="let university of universities">
-        <div class="university">
-            <a href='{{university.webPage}}' target='_blank'>{{university.name}}</a>
-            <button class="fa fa-floppy-disk" (click)="save(university)"></button>            
-        </div>
-        <div style="height:18px;">
-        </div>
+        <div class="flex">
+            <a class="university" href='{{university.webPage}}' target='_blank'>
+                {{university.name}}
+            </a>
+            <div style="width:12px;"></div>
+            <button class="fa fa-floppy-disk" (click)="save(university)"></button>
+        </div>       
+        <div style="height:18px;"></div>
     </div>
 
     <!--Country Containers-->
     <div id="countries" *ngIf="displayCountries">
-        <button class="click" (click)="searchCountry(country1)">{{country1}}</button>
-        <button class="click" (click)="searchCountry(country2)">{{country2}}</button>
-        <button class="click" (click)="searchCountry(country3)">{{country3}}</button>
-        <button class="click" (click)="searchCountry(country4)">{{country4}}</button>
+        <div class="click" (click)="searchCountry(country1)">{{country1}}</div>
+        <div class="click" (click)="searchCountry(country2)">{{country2}}</div>
+        <div class="click" (click)="searchCountry(country3)">{{country3}}</div>
+        <div class="click" (click)="searchCountry(country4)">{{country4}}</div>
     </div>
 
     <br /><br /><br /><br /><br /><br /><br /><br />

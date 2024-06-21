@@ -10,27 +10,29 @@
 
     <!--Navigation Bar-->
     <div class="flex">
-        <div class="navOff">
-            <a href="/Search">Search</a>
-        </div>
-        <div class="navOff">
-            <a href="/Ask">Ask</a>
-        </div>
-        <div class="navOn">
-            <a href="/Load">Load</a>
-        </div>
+        <a href="/Search">
+            <div class="navOff">Search</div>
+        </a>
+        <a href="/Ask">
+            <div class="navOff">Ask</div>
+        </a>
+        <a href="/Load">
+            <div class="navOn">Load</div>
+        </a>
     </div>
 
     <br /><br /><br /><br /><br /><br /><br /><br />
 
     <!--University Containers-->
     <div class="container" *ngFor="let university of universities">
-        <div class="university">
-            <a href='{{university.webPage}}' target='_blank'>{{university.name}}</a>
+        <div class="flex">
+            <a class="university" href='{{university.webPage}}' target='_blank'>
+                {{university.name}}
+            </a>
+            <div style="width:12px;"></div>
             <button class="fa fa-trash" (click)="delete(university.name)"></button>
-        </div>
-        <div style="height:18px;">
-        </div>
+        </div>       
+        <div style="height:18px;"></div>
     </div>
 
     <br /><br /><br /><br /><br /><br /><br /><br />

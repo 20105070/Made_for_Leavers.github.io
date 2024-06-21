@@ -3,9 +3,10 @@
 /*#c Styling*/
 #c {
     /*https://wallpapercave.com/w/wp5680536*/
-    background-color: #FFFFFF;
-    background-image: url('./assets/images/c.jpg');
+    /*background-image: url('./assets/images/c.jpg');*/
+    background-color: #2B2A33;
     background-size: 100%;
+    color: #00FF00;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
     font-weight: bold;
@@ -13,7 +14,16 @@
 
 /*.click Styling*/
 .click {
+    align-items: center;
+    background: #42414D;
     border-radius: 0.5rem;
+    color: #00FF00;
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+    padding: 0.5rem;
+    text-align: center;
+    width: 250px;
 }
 
 /*.click:active Styling*/
@@ -24,6 +34,7 @@
 /*.click:hover Styling*/
 .click:hover {
     background-color: #00FF00;
+    color: #42414D;
 }
 
 /*.container Styling*/
@@ -57,7 +68,7 @@
 /*.flexBar Styling*/
 .flexBar {
     align-items: center;
-    background: #00FF00;
+    background: #42414D;
     border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -68,8 +79,9 @@
 
 /*input Styling*/
 input {
-    background: #00FF00;
+    background: #42414D;
     border: none;
+    color: #00FF00;
     margin: 0 0.5rem 0 0.5rem;
     outline: none;
     width: 100%;
@@ -77,10 +89,16 @@ input {
 
 /*.navOff Styling*/
 .navOff {
-    background-color: #FFFFFF;
+    align-items: center;
+    background: #42414D;
     border-radius: 0.5rem;
-    font-size: 2em;
-    font-weight: bold;
+    color: #00FF00;
+    display: flex;
+    font-size: 2rem;
+    justify-content: space-between;
+    padding: 0.5rem;
+    text-align: center;
+    width: 250px;
 }
 
 /*.navOff:active Styling*/
@@ -91,14 +109,21 @@ input {
 /*.navOff:hover Styling*/
 .navOff:hover {
     background-color: #00FF00;
+    color: #42414D;
 }
 
 /*.navOn Styling*/
 .navOn {
-    background-color: #00FF00;
+    align-items: center;
+    background: #00FF00;
     border-radius: 0.5rem;
+    color: #42414D;
+    display: flex;
     font-size: 2rem;
-    font-weight: bold;
+    justify-content: space-between;
+    padding: 0.5rem;
+    text-align: center;
+    width: 250px;
 }
 
 /*.navOn:active Styling*/
@@ -106,16 +131,21 @@ input {
     transform: scale(0.96);
 }
 
-/*.navOn:hover Styling*/
-.navOn:hover {
-    background-color: #00FF00;
-}
-
+/*.university Styling*/
 .university {
-    background-color: #FFFFFF;
+    align-items: center;
+    background: #42414D;
     border-radius: 0.5rem;
+    color: #00FF00;
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+    padding: 0.5rem;
+    text-align: center;
 }
 
+/*.university:hover Styling*/
 .university:hover {
     background-color: #00FF00;
+    color: #42414D;
 }
