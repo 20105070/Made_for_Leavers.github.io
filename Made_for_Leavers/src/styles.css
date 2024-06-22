@@ -4,7 +4,7 @@
 #c {
     /*https://wallpapercave.com/w/wp5680536*/
     /*background-image: url('./assets/images/c.jpg');*/
-    background-color: #2B2A33;
+    background-color: #003200;
     background-size: 100%;
     color: #00FF00;
     font-family: 'Courier New', Courier, monospace;
@@ -15,10 +15,9 @@
 /*.click Styling*/
 .click {
     align-items: center;
-    background: #42414D;
+    background: #004800;
     border-radius: 0.5rem;
     color: #00FF00;
-    display: flex;
     font-size: 1rem;
     justify-content: space-between;
     padding: 0.5rem;
@@ -34,7 +33,7 @@
 /*.click:hover Styling*/
 .click:hover {
     background-color: #00FF00;
-    color: #42414D;
+    color: #004200;
 }
 
 /*.container Styling*/
@@ -68,7 +67,7 @@
 /*.flexBar Styling*/
 .flexBar {
     align-items: center;
-    background: #42414D;
+    background: #004800;
     border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -79,7 +78,7 @@
 
 /*input Styling*/
 input {
-    background: #42414D;
+    background: #004800;
     border: none;
     color: #00FF00;
     margin: 0 0.5rem 0 0.5rem;
@@ -90,10 +89,9 @@ input {
 /*.navOff Styling*/
 .navOff {
     align-items: center;
-    background: #42414D;
+    background: #004800;
     border-radius: 0.5rem;
     color: #00FF00;
-    display: flex;
     font-size: 2rem;
     justify-content: space-between;
     padding: 0.5rem;
@@ -109,7 +107,7 @@ input {
 /*.navOff:hover Styling*/
 .navOff:hover {
     background-color: #00FF00;
-    color: #42414D;
+    color: #004800;
 }
 
 /*.navOn Styling*/
@@ -117,8 +115,7 @@ input {
     align-items: center;
     background: #00FF00;
     border-radius: 0.5rem;
-    color: #42414D;
-    display: flex;
+    color: #004800;
     font-size: 2rem;
     justify-content: space-between;
     padding: 0.5rem;
@@ -134,10 +131,9 @@ input {
 /*.university Styling*/
 .university {
     align-items: center;
-    background: #42414D;
+    background: #004800;
     border-radius: 0.5rem;
     color: #00FF00;
-    display: flex;
     font-size: 1rem;
     justify-content: space-between;
     padding: 0.5rem;
@@ -147,5 +143,5 @@ input {
 /*.university:hover Styling*/
 .university:hover {
     background-color: #00FF00;
-    color: #42414D;
+    color: #004800;
 }
