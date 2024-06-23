@@ -33,7 +33,7 @@
 /*.click:hover Styling*/
 .click:hover {
     background-color: #00FF00;
-    color: #004200;
+    color: #004800;
 }
 
 /*.container Styling*/
@@ -74,6 +74,24 @@
     padding: 0.5rem;
     text-align: center;
     width: 500px;
+}
+
+/*.guidanceCounsellor Styling*/
+.guidanceCounsellor {
+    align-items: center;
+    background: #004800;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 300px;  
+    justify-content: space-around;
+    width:500px;
+}
+
+/*.guidanceCounsellor:hover Styling*/
+.guidanceCounsellor:hover {
+    background: #00FF00;
 }
 
 /*input Styling*/
