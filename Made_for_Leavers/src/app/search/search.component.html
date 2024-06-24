@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Search</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Made for Leavers - Search</title>
 </head>
 
 <body>
 
     <!--Navigation Bar-->
-    <div class="flex">
+    <div class="container">
         <a href="/Search">
             <div class="navOn">Search</div>
         </a>
@@ -24,34 +24,34 @@
     <br /><br /><br /><br /><br /><br /><br /><br />
 
     <!--Search Bar-->
-    <div class="flex">
-        <div class="flexBar">
+    <div class="container">
+        <div class="search">
             <div class="fa fa-search"></div>
-            <input type="text" placeholder="Enter a country/city..." [(ngModel)]="input" (keydown.enter)="search()"/>
-            <button class="fa fa-search" (click)="search()"></button>
+            <input type="text" placeholder="Enter a country/city..." [(ngModel)]="input" (keydown.enter)="searchC()"/>
+            <button class="fa fa-search" (click)="searchC()"></button>
         </div>
     </div>
 
     <br /><br /><br /><br /><br /><br /><br /><br />
 
-    <!--University Containers-->
-    <div class="container" *ngFor="let university of universities">
-        <div class="flex">
+    <!--University Container-->
+    <div class="universities" *ngFor="let university of universities">
+        <div class="container">
             <a class="university" href='{{university.webPage}}' target='_blank'>
                 {{university.name}}
             </a>
             <div style="width:12px;"></div>
-            <button class="fa fa-floppy-disk" (click)="save(university)"></button>
+            <button class="fa fa-floppy-disk" (click)="saveUniversity(university)"></button>
         </div>       
         <div style="height:18px;"></div>
     </div>
 
-    <!--Country Containers-->
-    <div id="countries" *ngIf="displayCountries">
-        <div class="click" (click)="searchCountry(country1)">{{country1}}</div>
-        <div class="click" (click)="searchCountry(country2)">{{country2}}</div>
-        <div class="click" (click)="searchCountry(country3)">{{country3}}</div>
-        <div class="click" (click)="searchCountry(country4)">{{country4}}</div>
+    <!--Country Container-->
+    <div class="countries" *ngIf="displayCountry">
+        <div class="country" (click)="searchCountry(country1)">{{country1}}</div>
+        <div class="country" (click)="searchCountry(country2)">{{country2}}</div>
+        <div class="country" (click)="searchCountry(country3)">{{country3}}</div>
+        <div class="country" (click)="searchCountry(country4)">{{country4}}</div>
     </div>
 
     <br /><br /><br /><br /><br /><br /><br /><br />

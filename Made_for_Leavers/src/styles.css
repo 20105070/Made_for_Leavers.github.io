@@ -12,72 +12,17 @@
     font-weight: bold;
 }
 
-/*.click Styling*/
-.click {
-    align-items: center;
-    background: #004800;
-    border-radius: 0.5rem;
-    color: #00FF00;
-    font-size: 1rem;
-    justify-content: space-between;
-    padding: 0.5rem;
-    text-align: center;
-    width: 250px;
-}
-
-/*.click:active Styling*/
-.click:active {
-    transform: scale(0.96);
-}
-
-/*.click:hover Styling*/
-.click:hover {
-    background-color: #00FF00;
-    color: #004800;
-}
-
 /*.container Styling*/
 .container {
     align-items: center;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-/*#countries Styling*/
-#countries {
-    align-content: space-between;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around; 
-}
-
-/*.flex Styling*/
-.flex {
-    align-items: center;
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-/*.flexBar Styling*/
-.flexBar {
-    align-items: center;
-    background: #004800;
-    border-radius: 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem;
-    text-align: center;
-    width: 500px;
-}
-
-/*.guidanceCounsellor Styling*/
-.guidanceCounsellor {
+/*.counsellor Styling*/
+.counsellor {
     align-items: center;
     background: #004800;
     border-radius: 0.5rem;
@@ -89,9 +34,42 @@
     width:500px;
 }
 
-/*.guidanceCounsellor:hover Styling*/
-.guidanceCounsellor:hover {
+/*.counsellor:hover Styling*/
+.counsellor:hover {
     background: #00FF00;
+}
+
+/*.country Styling*/
+.country {
+    align-items: center;
+    background: #004800;
+    border-radius: 0.5rem;
+    color: #00FF00;
+    font-size: 1rem;
+    justify-content: space-between;
+    padding: 0.5rem;
+    text-align: center;
+    width: 250px;
+}
+
+/*.country:active Styling*/
+.country:active {
+    transform: scale(0.96);
+}
+
+/*.country:hover Styling*/
+.country:hover {
+    background-color: #00FF00;
+    color: #004800;
+}
+
+/*.countries Styling*/
+.countries {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 /*input Styling*/
@@ -146,6 +124,18 @@ input {
     transform: scale(0.96);
 }
 
+/*.search Styling*/
+.search {
+    align-items: center;
+    background: #004800;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    text-align: center;
+    width: 500px;
+}
+
 /*.university Styling*/
 .university {
     align-items: center;
@@ -162,4 +152,13 @@ input {
 .university:hover {
     background-color: #00FF00;
     color: #004800;
+}
+
+/*.universities Styling*/
+.universities {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }

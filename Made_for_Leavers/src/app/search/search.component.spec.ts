@@ -9,9 +9,9 @@ import { University } from '../models/university';
 describe('SearchComponent', () => {
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
-  const spy = jasmine.createSpyObj('HttpService', ['deleteUniversity', 'getUniversities', 'postUniversity']);
+  const spy = jasmine.createSpyObj('HttpService', ['deleteUniversity', 'getUniversity', 'postUniversity']);
   spy.deleteUniversity.and.returnValue(of());
-  spy.getUniversities.and.returnValue(of());
+  spy.getUniversity.and.returnValue(of());
   spy.postUniversity.and.returnValue(of());
 
   beforeEach(() => {
@@ -37,7 +37,7 @@ describe('SearchComponent', () => {
         alpha_two_code: "IE"
       }
     ]
-    component.display(jsonRes);
+    component.displayUniversity(jsonRes);
     expect(component.universities[0].name).toEqual("National College of Ireland");
   }));
 
@@ -45,7 +45,7 @@ describe('SearchComponent', () => {
   it('should store university in a database', () => {
     spy.postUniversity.calls.reset();
     var university = new University("National College of Ireland", "http://www.ncirl.ie/");
-    component.save(university);
+    component.saveUniversity(university);
     expect(spy.postUniversity).toHaveBeenCalledWith(university);
   });
 

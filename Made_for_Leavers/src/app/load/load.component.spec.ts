@@ -9,9 +9,9 @@ import { University } from '../models/university';
 describe('LoadComponent', () => {
   let component: LoadComponent;
   let fixture: ComponentFixture<LoadComponent>;
-  const spy = jasmine.createSpyObj('HttpService', ['deleteUniversity', 'getUniversities', 'postUniversity']);
+  const spy = jasmine.createSpyObj('HttpService', ['deleteUniversity', 'getUniversity', 'postUniversity']);
   spy.deleteUniversity.and.returnValue(of());
-  spy.getUniversities.and.returnValue(of());
+  spy.getUniversity.and.returnValue(of());
   spy.postUniversity.and.returnValue(of());
 
   beforeEach(() => {
@@ -26,17 +26,17 @@ describe('LoadComponent', () => {
   });
 
   //Use-case 3
-  it('should retrieve universities from a database', () => {
-    spy.getUniversities.calls.reset();
-    component.load();
-    expect(spy.getUniversities).toHaveBeenCalled();
+  it('should load university from a database', () => {
+    spy.getUniversity.calls.reset();
+    component.loadUniversity();
+    expect(spy.getUniversity).toHaveBeenCalled();
   });
 
   //Use-case 4
   it('should remove university from a database', () => {
     spy.deleteUniversity.calls.reset();
     var university = new University("National College of Ireland", "http://www.ncirl.ie/");
-    component.delete(university.name);
+    component.removeUniversity(university.name);
     expect(spy.deleteUniversity).toHaveBeenCalledWith(university.name);
   });
 

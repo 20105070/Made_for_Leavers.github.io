@@ -19,9 +19,9 @@ namespace Made_for_LeaversApi.Controllers
             _context = context;
         }
 
-        [HttpGet("GetUniversities")]
-        /*GetUniversities() loads all the universities from the database and returns them to the Angular front-end.*/
-        public async Task<IEnumerable<University>> GetUniversities()
+        [HttpGet("GetUniversity")]
+        /*GetUniversity() loads all the universities from the database and returns them to the Angular front-end.*/
+        public async Task<IEnumerable<University>> GetUniversity()
         {
             var universities = await _context.Universities
                 .ToListAsync();
@@ -41,7 +41,7 @@ namespace Made_for_LeaversApi.Controllers
             return NoContent();
         }
 
-        [HttpPost("PostUniversity/")]
+        [HttpPost("PostUniversity")]
         /*PostUniversity([FromBody] University university) inserts university into the database.*/
         public async Task<IActionResult> PostUniversity([FromBody] University university)
         {

@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit {
   country2: string;
   country3: string;
   country4: string;
-  displayCountries: boolean;
+  displayCountry: boolean;
   input: string;
   universities: University[];
 
@@ -24,19 +24,19 @@ export class SearchComponent implements OnInit {
     this.country2 = 'united kingdom';
     this.country3 = 'canada';
     this.country4 = 'ireland';
-    this.displayCountries = true;
+    this.displayCountry = true;
     this.input = '';
     this.universities = [];
   }
 
-  /*display(json) receives json, hides rotating countries, and displays all the universities in the entered country/city as links to their websites.*/
-  display(json: any[]) {
+  /*displayUniversity(json) receives json, hides rotating countries, and displays all the universities in the entered country/city as links to their websites.*/
+  displayUniversity(json: any[]) {
     if (json.length === 0) {
       alert(this.input + " has no university!");
     }
     else {
       this.universities = [];
-      this.displayCountries = false;
+      this.displayCountry = false;
       for (var i = 0; i < (json.length); i++) {
         var university = new University(json[i].name, json[i].web_pages[0]);
         if (!this.universities.some(u => u.name == university.name)) {
@@ -46,44 +46,44 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  /*ngOnInit() runs rotate() when the search component is initialised.*/
+  /*ngOnInit() runs rotateCountry() when the search component is initialised.*/
   ngOnInit(): void {
-    this.rotate();
+    this.rotateCountry();
   }
 
-  /*returnRandom() generates and returns a random number between 0 and 171.*/
-  returnRandom() {
+  /*returnNumber() generates and returns a random number between 0 and 171.*/
+  returnNumber() {
     var max = 171;
     return Math.floor(Math.random() * max) + 1;
   }
 
-  /*rotate() displays 4 random countries determined by returnRandom() and rotates them every 1.8 seconds.*/
-  rotate() {
+  /*rotateCountry() displays 4 random countries determined by returnNumber() and rotates them every 1.71 seconds.*/
+  rotateCountry() {
     setInterval(() => {
-      this.country1 = this.countries[this.returnRandom()], this.country2 = this.countries[this.returnRandom()], this.country3 = this.countries[this.returnRandom()], this.country4 = this.countries[this.returnRandom()];
-    }, 1800);
+      this.country1 = this.countries[this.returnNumber()], this.country2 = this.countries[this.returnNumber()], this.country3 = this.countries[this.returnNumber()], this.country4 = this.countries[this.returnNumber()];
+    }, 1710);
   }
 
-  /*save(university: University) receives university, calls a method of http_service.ts, and gives a saved alert.*/
-  save(university: University) {
+  /*saveUniversity(university: University) receives university, calls a method of http_service.ts, and gives a saved alert.*/
+  saveUniversity(university: University) {
     this.httpService.postUniversity(university).subscribe(() => {
       alert(`Saved ${university.name}!`);
     });
   }
 
-  /*search() concatenates entered country/city with the URL to create url that is passed into window.fetch(url).*/
-  search() {
+  /*searchC() concatenates entered country/city with the URL to create url that is passed into window.fetch(url).*/
+  searchC() {
     if (this.countries.includes(this.input.toLowerCase()) === true) {
       var url = "http://universities.hipolabs.com/search?country=" + this.input;
       window.fetch(url)
         .then(urlRes => urlRes.json())
-        .then(jsonRes => this.display(jsonRes));
+        .then(jsonRes => this.displayUniversity(jsonRes));
     }
     else {
       var url = "http://universities.hipolabs.com/search?name=" + this.input;
       window.fetch(url)
         .then(urlRes => urlRes.json())
-        .then(jsonRes => this.display(jsonRes));
+        .then(jsonRes => this.displayUniversity(jsonRes));
     }
   }
 
@@ -92,7 +92,7 @@ export class SearchComponent implements OnInit {
     var url = "http://universities.hipolabs.com/search?country=" + countryN;
     window.fetch(url)
       .then(urlRes => urlRes.json())
-      .then(jsonRes => this.display(jsonRes));
+      .then(jsonRes => this.displayUniversity(jsonRes));
   }
 
 }

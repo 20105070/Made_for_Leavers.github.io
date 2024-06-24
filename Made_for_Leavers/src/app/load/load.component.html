@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Load</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Made for Leavers - Load</title>
 </head>
 
 <body>
 
     <!--Navigation Bar-->
-    <div class="flex">
+    <div class="container">
         <a href="/Search">
             <div class="navOff">Search</div>
         </a>
@@ -23,14 +23,14 @@
 
     <br /><br /><br /><br /><br /><br /><br /><br />
 
-    <!--University Containers-->
-    <div class="container" *ngFor="let university of universities">
-        <div class="flex">
+    <!--University Container-->
+    <div class="universities" *ngFor="let university of universities">
+        <div class="container">
             <a class="university" href='{{university.webPage}}' target='_blank'>
                 {{university.name}}
             </a>
             <div style="width:12px;"></div>
-            <button class="fa fa-trash" (click)="delete(university.name)"></button>
+            <button class="fa fa-trash" (click)="removeUniversity(university.name)"></button>
         </div>       
         <div style="height:18px;"></div>
     </div>
