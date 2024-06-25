@@ -24,11 +24,13 @@
     <br /><br /><br /><br /><br /><br /><br /><br />
 
     <!--Search Bar-->
-    <div class="container">
-        <div class="search">
-            <div class="fa fa-search"></div>
-            <input type="text" placeholder="Enter a country/city..." [(ngModel)]="input" (keydown.enter)="searchC()"/>
-            <button class="fa fa-search" (click)="searchC()"></button>
+    <div class="searches">
+        <div class="container">
+            <div class="search">
+                <div class="fa fa-search"></div>
+                <input type="text" placeholder="Enter a country/city..." [(ngModel)]="input" (keydown.enter)="searchC()"/>
+            </div>
+            <button class="fa fa-search" (click)="searchC()" style="background: #00FF00; border: none; border-radius: 0.5rem; color: #004800; height: 2rem; width: 2rem;"></button>
         </div>
     </div>
 
@@ -40,10 +42,9 @@
             <a class="university" href='{{university.webPage}}' target='_blank'>
                 {{university.name}}
             </a>
-            <div style="width:12px;"></div>
-            <button class="fa fa-floppy-disk" (click)="saveUniversity(university)"></button>
+            <button class="fa fa-floppy-disk" (click)="saveUniversity(university)" style="background: #00FF00; border: none; border-radius: 0.5rem; color: #004800; height: 2rem; width: 2rem;"></button>
         </div>       
-        <div style="height:18px;"></div>
+        <div style="height: 16px;"></div>
     </div>
 
     <!--Country Container-->

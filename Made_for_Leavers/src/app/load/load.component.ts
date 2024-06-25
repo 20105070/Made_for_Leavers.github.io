@@ -16,13 +16,6 @@ export class LoadComponent implements OnInit {
     this.universities = [];
   }
 
-  /*removeUniversity(name: string) receives name, calls a method of http_service.ts, and reloads saved universities.*/
-  removeUniversity(name: string) {
-    this.httpService.deleteUniversity(name).subscribe(() => {
-      this.loadUniversity();
-    });
-  }
-
   /*loadUniversity() receives universities from http and calls a method of http_service.ts, and assigns the value of universities.*/
   loadUniversity() {
     this.httpService.getUniversity().subscribe((universities: University[]) => {
@@ -33,6 +26,13 @@ export class LoadComponent implements OnInit {
   /*ngOnInit() runs loadUniversity() when the load component is initialised.*/
   ngOnInit(): void {
     this.loadUniversity();
+  }
+
+  /*removeUniversity(name: string) receives name, calls a method of http_service.ts, and reloads saved universities.*/
+  removeUniversity(name: string) {
+    this.httpService.deleteUniversity(name).subscribe(() => {
+      this.loadUniversity();
+    });
   }
 
 }

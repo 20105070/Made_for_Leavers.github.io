@@ -52,11 +52,6 @@
     width: 250px;
 }
 
-/*.country:active Styling*/
-.country:active {
-    transform: scale(0.96);
-}
-
 /*.country:hover Styling*/
 .country:hover {
     background-color: #00FF00;
@@ -95,11 +90,6 @@ input {
     width: 250px;
 }
 
-/*.navOff:active Styling*/
-.navOff:active {
-    transform: scale(0.96);
-}
-
 /*.navOff:hover Styling*/
 .navOff:hover {
     background-color: #00FF00;
@@ -119,11 +109,6 @@ input {
     width: 250px;
 }
 
-/*.navOn:active Styling*/
-.navOn:active {
-    transform: scale(0.96);
-}
-
 /*.search Styling*/
 .search {
     align-items: center;
@@ -134,6 +119,15 @@ input {
     padding: 0.5rem;
     text-align: center;
     width: 500px;
+}
+
+/*.searches Styling*/
+.searches {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 /*.university Styling*/
