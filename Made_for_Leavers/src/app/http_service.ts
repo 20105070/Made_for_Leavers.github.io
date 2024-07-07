@@ -15,19 +15,19 @@ export class HttpService {
   /*deleteUniversity() sends delete request to the C# back-end.*/
   deleteUniversity(name: string): Observable<any> {
     let headers = new HttpHeaders().set('Access-Control-Allow-Origin', "*");
-    return this.httpClient.delete(`https://localhost:3248/University/DeleteUniversity/${name}`, { headers: headers });
+    return this.httpClient.delete(`https://madeforleaversms.azure-api.net/University/DeleteUniversity/${name}`, { headers: headers });
   }
 
   /*getUniversity() sends get request to the C# back-end.*/
   getUniversity(): Observable<University[]> {
     let headers = new HttpHeaders().set('Access-Control-Allow-Origin', "*");
-    return this.httpClient.get<University[]>('https://localhost:3248/University/GetUniversity', { headers: headers });
+    return this.httpClient.get<University[]>('https://madeforleaversms.azure-api.net/University/GetUniversity', { headers: headers });
   }
 
   /*postUniversity() sends post request to the C# back-end.*/
   postUniversity(university: University): Observable<any> {
     let headers = new HttpHeaders().set('Access-Control-Allow-Origin', "*").set('Content-Type', 'application/json');
-    return this.httpClient.post<University>('https://localhost:3248/University/PostUniversity', university, { headers: headers });
+    return this.httpClient.post<University>('https://madeforleaversms.azure-api.net/University/PostUniversity', university, { headers: headers });
   }
 
 }
