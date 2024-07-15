@@ -74,12 +74,14 @@ export class SearchComponent implements OnInit {
   /*searchC() concatenates entered country/city with the URL to create url that is passed into back-end and into window.fetch(url).*/
   searchC() {
     if (this.countries.includes(this.input.toLowerCase()) === true) {
+      /*var url = "http://universities.hipolabs.com/search?country=" + this.input;*/
       var url = "https://madeforleaversms.azure-api.net/University/SearchUniversityCountry/" + this.input;
       window.fetch(url)
         .then(urlRes => urlRes.json())
         .then(jsonRes => this.displayUniversity(jsonRes));
     }
     else {
+      /*var url = "http://universities.hipolabs.com/search?name=" + this.input;*/
       var url = "https://madeforleaversms.azure-api.net/University/SearchUniversityCity/" + this.input;
       window.fetch(url)
         .then(urlRes => urlRes.json())
@@ -89,6 +91,7 @@ export class SearchComponent implements OnInit {
 
   /*searchCountry(countryN) concatenates clicked country with the URL to create url that is passed into back-end and into window.fetch(url).*/
   searchCountry(countryN: string) {
+    /*var url = "http://universities.hipolabs.com/search?country=" + countryN;*/
     var url = "https://madeforleaversms.azure-api.net/University/SearchUniversityCountry/" + countryN;
     window.fetch(url)
       .then(urlRes => urlRes.json())

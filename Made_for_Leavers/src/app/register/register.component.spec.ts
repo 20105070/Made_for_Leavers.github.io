@@ -1,0 +1,1 @@
+/*register.component.spec.ts - Daniel Syrén (20105070)*/

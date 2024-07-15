@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './ask.component.html'
 })
 export class AskComponent {
-    
+
 }

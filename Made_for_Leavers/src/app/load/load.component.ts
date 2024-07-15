@@ -8,7 +8,6 @@ import { University } from '../models/university';
   templateUrl: './load.component.html'
 })
 export class LoadComponent implements OnInit {
-
   universities: University[];
 
   /*constructor(private httpService: HttpService) injects httpService and initialises declared variables.*/
