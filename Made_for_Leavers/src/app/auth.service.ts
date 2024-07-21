@@ -12,13 +12,13 @@ export class AuthService {
     user$ = user(this.firebaseAuth);
     currentUserSig = signal<UserInterface | null | undefined>(undefined);
 
-    /*register(email: string, username: string, password: string) registers user.*/
-    register(email: string, username: string, password: string): Observable<void> {
+    /*register(email: string, password: string) registers user.*/
+    register(email: string, password: string): Observable<void> {
         const promise = createUserWithEmailAndPassword(
             this.firebaseAuth,
             email,
             password,
-        ).then(response => updateProfile(response.user, { displayName: username }),
+        ).then(response => updateProfile(response.user, { displayName: email }),
         );
         return from(promise);
     }

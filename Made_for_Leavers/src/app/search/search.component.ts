@@ -1,7 +1,8 @@
 /*search.component.ts - Daniel Syrén (20105070)*/
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { HttpService } from '../http_service';
 import { University } from '../models/university';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-search',
@@ -28,8 +29,9 @@ export class SearchComponent implements OnInit {
     this.input = '';
     this.universities = [];
   }
+  authService = inject(AuthService);
 
-  /*displayUniversity(json) receives json, hides rotating countries, and displays all the universities in the entered country/city as links to their websites.*/
+  /*displayUniversity(json: any[]) receives json, hides rotating countries, and displays all the universities in the entered country/city as links to their websites.*/
   displayUniversity(json: any[]) {
     if (json.length === 0) {
       alert(this.input + " has no university!");
@@ -37,12 +39,16 @@ export class SearchComponent implements OnInit {
     else {
       this.universities = [];
       this.displayCountry = false;
-      for (var i = 0; i < (json.length); i++) {
-        var university = new University(json[i].name, json[i].web_pages[0]);
-        if (!this.universities.some(u => u.name == university.name)) {
-          this.universities.push(university);
+      this.authService.user$.subscribe((user) => {
+        if (user) {
+          for (var i = 0; i < (json.length); i++) {
+            var university = new University(user.email, json[i].name, json[i].web_pages[0]);
+            if (!this.universities.some(u => u.name == university.name)) {
+              this.universities.push(university);
+            }
+          }
         }
-      }
+      });
     }
   }
 

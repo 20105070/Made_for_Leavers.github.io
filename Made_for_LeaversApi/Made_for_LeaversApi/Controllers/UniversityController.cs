@@ -2,7 +2,6 @@
 using Made_for_LeaversApi.Data;
 using Made_for_LeaversApi.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 
@@ -25,7 +24,12 @@ namespace Made_for_LeaversApi.Controllers
         /*GetUniversity() loads all the universities from the database and returns them to the Angular front-end.*/
         public async Task<IEnumerable<University>> GetUniversity()
         {
-            var universities = await _context.Universities
+            if (!Request.Headers.ContainsKey("Authorization"))
+            {
+                throw new UnauthorizedAccessException();
+            }
+            var email = Request.Headers.First(f => f.Key == "Authorization").Value.ToString();
+            var universities = await _context.Universities.Where(u => u.Email == email)
                 .ToListAsync();
             return universities;
         }
@@ -34,7 +38,12 @@ namespace Made_for_LeaversApi.Controllers
         /*DeleteUniversity(string name) deletes the university from the database with the name of name.*/
         public async Task<IActionResult> DeleteUniversity(string name)
         {
-            var removeUni = await _context.Universities.Where(u => u.Name == name).FirstOrDefaultAsync();
+            if (!Request.Headers.ContainsKey("Authorization"))
+            {
+                throw new UnauthorizedAccessException();
+            }
+            var email = Request.Headers.First(f => f.Key == "Authorization").Value.ToString();
+            var removeUni = await _context.Universities.Where(u => u.Email == email && u.Name == name).FirstOrDefaultAsync();
             if (removeUni != null)
             {
                 _context.Universities.Remove(removeUni);
@@ -47,7 +56,7 @@ namespace Made_for_LeaversApi.Controllers
         /*PostUniversity([FromBody] University university) inserts university into the database.*/
         public async Task<IActionResult> PostUniversity([FromBody] University university)
         {
-            var isUni = await _context.Universities.AnyAsync(u => u.Name == university.Name);
+            var isUni = await _context.Universities.AnyAsync(u => u.Email == university.Email && u.Name == university.Name);
             if (!isUni)
             {
                 await _context.Universities.AddAsync(university);

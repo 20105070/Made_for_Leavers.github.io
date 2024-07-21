@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\20105070\\Desktop\\Made_for_Leavers\\Made_for_LeaversAPI\\Made_for_LeaversApi\\Made_for_LeaversApi.csproj": {}
+    "C:\\Users\\20105070\\Desktop\\Made_for_Leavers\\Made_for_LeaversApi\\Made_for_LeaversApi\\Made_for_LeaversApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\20105070\\Desktop\\Made_for_Leavers\\Made_for_LeaversAPI\\Made_for_LeaversApi\\Made_for_LeaversApi.csproj": {
+    "C:\\Users\\20105070\\Desktop\\Made_for_Leavers\\Made_for_LeaversApi\\Made_for_LeaversApi\\Made_for_LeaversApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\20105070\\Desktop\\Made_for_Leavers\\Made_for_LeaversAPI\\Made_for_LeaversApi\\Made_for_LeaversApi.csproj",
+        "projectUniqueName": "C:\\Users\\20105070\\Desktop\\Made_for_Leavers\\Made_for_LeaversApi\\Made_for_LeaversApi\\Made_for_LeaversApi.csproj",
         "projectName": "Made_for_LeaversApi",
-        "projectPath": "C:\\Users\\20105070\\Desktop\\Made_for_Leavers\\Made_for_LeaversAPI\\Made_for_LeaversApi\\Made_for_LeaversApi.csproj",
+        "projectPath": "C:\\Users\\20105070\\Desktop\\Made_for_Leavers\\Made_for_LeaversApi\\Made_for_LeaversApi\\Made_for_LeaversApi.csproj",
         "packagesPath": "C:\\Users\\20105070\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\20105070\\Desktop\\Made_for_Leavers\\Made_for_LeaversAPI\\Made_for_LeaversApi\\obj\\",
+        "outputPath": "C:\\Users\\20105070\\Desktop\\Made_for_Leavers\\Made_for_LeaversApi\\Made_for_LeaversApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\20105070\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -15,17 +15,16 @@ export class RegisterComponent {
   authService = inject(AuthService);
   router = inject(Router);
   form = this.fb.nonNullable.group({
-    username: ['', Validators.required],
     email: ['', Validators.required],
     password: ['', Validators.required],
   });
   errorMessage: string | null = null;
 
-  /*onSubmit() receives username, email, and password, registers user, and navigates to search page.*/
+  /*onSubmit() receives email and password, registers user, and navigates to search page.*/
   onSubmit(): void {
     const rawForm = this.form.getRawValue();
     this.authService
-      .register(rawForm.email, rawForm.username, rawForm.password)
+      .register(rawForm.email, rawForm.password)
       .subscribe({
         next: () => {
           this.router.navigateByUrl('/Search');

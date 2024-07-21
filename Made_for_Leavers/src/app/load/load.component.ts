@@ -1,7 +1,8 @@
 /*load.component.ts - Daniel Syrén (20105070)*/
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { HttpService } from '../http_service';
 import { University } from '../models/university';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-load',
@@ -14,11 +15,16 @@ export class LoadComponent implements OnInit {
   constructor(private httpService: HttpService) {
     this.universities = [];
   }
+  authService = inject(AuthService);
 
   /*loadUniversity() receives universities from http and calls a method of http_service.ts, and assigns the value of universities.*/
   loadUniversity() {
-    this.httpService.getUniversity().subscribe((universities: University[]) => {
-      this.universities = universities;
+    this.authService.user$.subscribe((user) => {
+      if (user && user.email) {
+        this.httpService.getUniversity(user.email).subscribe((universities: University[]) => {
+          this.universities = universities;
+        });
+      }
     });
   }
 
@@ -29,8 +35,12 @@ export class LoadComponent implements OnInit {
 
   /*removeUniversity(name: string) receives name, calls a method of http_service.ts, and reloads saved universities.*/
   removeUniversity(name: string) {
-    this.httpService.deleteUniversity(name).subscribe(() => {
-      this.loadUniversity();
+    this.authService.user$.subscribe((user) => {
+      if (user && user.email) {
+        this.httpService.deleteUniversity(user.email, name).subscribe(() => {
+          this.loadUniversity();
+        });
+      }
     });
   }
 
