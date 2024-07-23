@@ -25,8 +25,8 @@ describe('SearchComponent', () => {
     fixture.detectChanges();
   });
 
-  //Use-case 1
-  it('should display universities by country/city and open link to university website', fakeAsync(() => {
+  //Use-case 3
+  it('should search country or city', fakeAsync(() => {
     var jsonRes: any[] = [
       {
         web_pages: "http://www.ncirl.ie/",
@@ -41,10 +41,10 @@ describe('SearchComponent', () => {
     expect(component.universities[0].name).toEqual("National College of Ireland");
   }));
 
-  //Use-case 2
-  it('should store university in a database', () => {
+  //Use-case 4
+  it('should save searched university', () => {
     spy.postUniversity.calls.reset();
-    var university = new University("National College of Ireland", "http://www.ncirl.ie/");
+    var university = new University("x20105070@student.ncirl.ie", "National College of Ireland", "http://www.ncirl.ie/");
     component.saveUniversity(university);
     expect(spy.postUniversity).toHaveBeenCalledWith(university);
   });

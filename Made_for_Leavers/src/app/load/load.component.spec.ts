@@ -25,17 +25,17 @@ describe('LoadComponent', () => {
     fixture.detectChanges();
   });
 
-  //Use-case 3
-  it('should load university from a database', () => {
+  //Use-case 6
+  it('should load saved universities', () => {
     spy.getUniversity.calls.reset();
     component.loadUniversity();
     expect(spy.getUniversity).toHaveBeenCalled();
   });
 
-  //Use-case 4
-  it('should remove university from a database', () => {
+  //Use-case 7
+  it('should remove loaded university', () => {
     spy.deleteUniversity.calls.reset();
-    var university = new University("National College of Ireland", "http://www.ncirl.ie/");
+    var university = new University("x20105070@student.ncirl.ie", "National College of Ireland", "http://www.ncirl.ie/");
     component.removeUniversity(university.name);
     expect(spy.deleteUniversity).toHaveBeenCalledWith(university.name);
   });

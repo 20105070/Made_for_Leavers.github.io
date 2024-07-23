@@ -95,7 +95,7 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  /*searchCountry(countryN) concatenates clicked country with the URL to create url that is passed into back-end and into window.fetch(url).*/
+  /*searchCountry(countryN: string) concatenates clicked country with the URL to create url that is passed into back-end and into window.fetch(url).*/
   searchCountry(countryN: string) {
     /*var url = "http://universities.hipolabs.com/search?country=" + countryN;*/
     var url = "https://madeforleaversms.azure-api.net/University/SearchUniversityCountry/" + countryN;
