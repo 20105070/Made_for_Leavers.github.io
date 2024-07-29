@@ -5,20 +5,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpService } from '../http_service';
 import { of } from 'rxjs';
 import { University } from '../models/university';
+import { AuthService } from '../auth.service';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
-  const spy = jasmine.createSpyObj('HttpService', ['deleteUniversity', 'getUniversity', 'postUniversity']);
-  spy.deleteUniversity.and.returnValue(of());
-  spy.getUniversity.and.returnValue(of());
-  spy.postUniversity.and.returnValue(of());
+  const spyHttp = jasmine.createSpyObj('HttpService', ['postUniversity']);
+  spyHttp.postUniversity.and.returnValue(of());
+  const spyAuth = jasmine.createSpyObj('AuthService', [], { user$: of({ email: 'x20105070@student.ncirl.ie' }) });
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [SearchComponent],
       imports: [FormsModule],
-      providers: [{ provide: HttpService, useValue: spy }]
+      providers: [{ provide: HttpService, useValue: spyHttp },
+      { provide: AuthService, useValue: spyAuth }
+      ]
     });
     fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;
@@ -43,10 +45,10 @@ describe('SearchComponent', () => {
 
   //Use-case 4
   it('should save searched university', () => {
-    spy.postUniversity.calls.reset();
+    spyHttp.postUniversity.calls.reset();
     var university = new University("x20105070@student.ncirl.ie", "National College of Ireland", "http://www.ncirl.ie/");
     component.saveUniversity(university);
-    expect(spy.postUniversity).toHaveBeenCalledWith(university);
+    expect(spyHttp.postUniversity).toHaveBeenCalledWith(university);
   });
 
 });

@@ -5,20 +5,23 @@ import { FormsModule } from '@angular/forms';
 import { HttpService } from '../http_service';
 import { of } from 'rxjs';
 import { University } from '../models/university';
+import { AuthService } from '../auth.service';
 
 describe('LoadComponent', () => {
   let component: LoadComponent;
   let fixture: ComponentFixture<LoadComponent>;
-  const spy = jasmine.createSpyObj('HttpService', ['deleteUniversity', 'getUniversity', 'postUniversity']);
-  spy.deleteUniversity.and.returnValue(of());
-  spy.getUniversity.and.returnValue(of());
-  spy.postUniversity.and.returnValue(of());
+  const spyHttp = jasmine.createSpyObj('HttpService', ['getUniversity', 'deleteUniversity']);
+  spyHttp.getUniversity.and.returnValue(of());
+  spyHttp.deleteUniversity.and.returnValue(of());
+  const spyAuth = jasmine.createSpyObj('AuthService', [], { user$: of({ email: 'x20105070@student.ncirl.ie' }) });
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [LoadComponent],
       imports: [FormsModule],
-      providers: [{ provide: HttpService, useValue: spy }]
+      providers: [{ provide: HttpService, useValue: spyHttp },
+      { provide: AuthService, useValue: spyAuth }
+      ]
     });
     fixture = TestBed.createComponent(LoadComponent);
     component = fixture.componentInstance;
@@ -27,17 +30,17 @@ describe('LoadComponent', () => {
 
   //Use-case 6
   it('should load saved universities', () => {
-    spy.getUniversity.calls.reset();
+    spyHttp.getUniversity.calls.reset();
     component.loadUniversity();
-    expect(spy.getUniversity).toHaveBeenCalled();
+    expect(spyHttp.getUniversity).toHaveBeenCalled();
   });
 
   //Use-case 7
   it('should remove loaded university', () => {
-    spy.deleteUniversity.calls.reset();
+    spyHttp.deleteUniversity.calls.reset();
     var university = new University("x20105070@student.ncirl.ie", "National College of Ireland", "http://www.ncirl.ie/");
     component.removeUniversity(university.name);
-    expect(spy.deleteUniversity).toHaveBeenCalledWith(university.name);
+    expect(spyHttp.deleteUniversity).toHaveBeenCalledWith(university.email, university.name);
   });
 
 });
