@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Made_for_LeaversApi.props" />
-</Project>
