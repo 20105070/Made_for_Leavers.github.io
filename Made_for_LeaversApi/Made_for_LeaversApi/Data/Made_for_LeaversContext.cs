@@ -17,7 +17,7 @@ namespace Made_for_LeaversApi.Data
         /*OnConfiguring(DbContextOptionsBuilder optionsBuilder) creates the connection to the Made_for_Leavers database.*/
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=14-dv1629na\\SQLEXPRESS01;Database =Made_for_Leavers;Integrated Security = true;TrustServerCertificate=True; Connect Timeout=60");
+            optionsBuilder.UseSqlServer("Server=tcp:madeforleaverssql.database.windows.net,1433;Initial Catalog=Made_for_Leavers;Persist Security Info=False;User ID=x20105070;Password=ThisIstheEnd2013;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;");
             base.OnConfiguring(optionsBuilder);
         }
 

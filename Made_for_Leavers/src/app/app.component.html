@@ -1,7 +1,7 @@
 <!--app.component.html - Daniel Syrén (20105070)-->
 <div *ngIf="authService.currentUserSig()">
-  {{authService.currentUserSig()?.email}}
-  <button class="fa fa-power-off" (click)="logout()"
-    style="background: #00FF00; border: none; border-radius: 0.5rem; color: #004800; height: 2rem; width: 2rem;"></button>
+    {{authService.currentUserSig()?.email}}
+    <button class="fa fa-power-off" (click)="logout()"
+        style="background: #00FF00; border: none; border-radius: 0.5rem; color: #004800; height: 2rem; width: 2rem;"></button>
 </div>
 <router-outlet></router-outlet>

@@ -2,47 +2,47 @@
 <html>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Made for Leavers - Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Made for Leavers - Login</title>
 </head>
 
 <body>
 
-  <!--Navigation Bar-->
-  <div class="container">
-    <a href="/Login">
-      <div class="navOn">Login</div>
-    </a>
-    <a href="/Register">
-      <div class="navOff">Register</div>
-    </a>
-  </div>
-
-  <br /><br /><br /><br /><br /><br /><br /><br />
-
-  <!--Form Container-->
-  <div class="forms">
+    <!--Navigation Bar-->
     <div class="container">
-      <div class="form">
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" style="width: 484px;">
-          <div>
-            <input type="text" placeholder="Email" formControlName="email" />
-          </div>
-          <div>
-            <input type="password" placeholder="Password" formControlName="password" />
-          </div>
-          <div style="height: 16px;"></div>
-          <div>
-            <button class="fa fa-check"
-              style="background: #00FF00; border: none; border-radius: 0.5rem; color: #004800; height: 2rem; width: 2rem;"
-              type="submit"></button>
-          </div>
-        </form>
-      </div>
+        <a href="/Login">
+            <div class="navOn">Login</div>
+        </a>
+        <a href="/Register">
+            <div class="navOff">Register</div>
+        </a>
     </div>
-  </div>
 
-  <br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+    <!--Form Container-->
+    <div class="forms">
+        <div class="container">
+            <div class="form">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()" style="width: 484px;">
+                    <div>
+                        <input type="text" placeholder="Email" formControlName="email" />
+                    </div>
+                    <div>
+                        <input type="password" placeholder="Password" formControlName="password" />
+                    </div>
+                    <div style="height: 16px;"></div>
+                    <div>
+                        <button class="fa fa-check"
+                            style="background: #00FF00; border: none; border-radius: 0.5rem; color: #004800; height: 2rem; width: 2rem;"
+                            type="submit"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
 
 </body>
 

@@ -3,6 +3,7 @@ using Made_for_LeaversApi.Data;
 using Made_for_LeaversApi.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace Made_for_LeaversApi.Controllers
 {
@@ -62,6 +63,32 @@ namespace Made_for_LeaversApi.Controllers
                 await _context.SaveChangesAsync();
             }
             return NoContent();
+        }
+
+        [HttpGet("SearchUniversityCountry/{country}")]
+        /*SearchUniversityCountry(string country) searches universities by country.*/
+        public async Task<string> SearchUniversityCountry(string country)
+        {
+            using (var client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }))
+            {
+                client.BaseAddress = new Uri("http://universities.hipolabs.com/search");
+                HttpResponseMessage response = await client.GetAsync($"?country={country}");
+                string result = await response.Content.ReadAsStringAsync();
+                return result;
+            }
+        }
+
+        [HttpGet("SearchUniversityCity/{city}")]
+        /*SearchUniversityCity(string city) searches universities by city.*/
+        public async Task<string> SearchUniversityCity(string city)
+        {
+            using (var client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }))
+            {
+                client.BaseAddress = new Uri("http://universities.hipolabs.com/search");
+                HttpResponseMessage response = await client.GetAsync($"?name={city}");
+                string result = await response.Content.ReadAsStringAsync();
+                return result;
+            }
         }
 
     }
